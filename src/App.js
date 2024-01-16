@@ -1,4 +1,7 @@
 import logo from './logo.svg';
+import { ReactComponent as Dice } from './images/icon-dice.svg';
+import { ReactComponent as Divider } from './images/pattern-divider-desktop.svg';
+
 import './App.css';
 import React, { useState, useEffect } from "react";
 
@@ -15,10 +18,10 @@ function App() {
       }
 
       const data = await response.json();
-      setAdvice(data.slip.advice);
+      setAdvice(data.slip);
 
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error happened:', error);
     }
 
   }
@@ -28,11 +31,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="main-container">
+      <div className="advice-container">
+        {advice && <h2>Advice #{advice.id}</h2>}
+        {advice && <div className='advice'>{advice.advice}</div>}
+        <div><Divider /></div>
+        <div><Dice /></div>
 
-      <div>
-        <h2>Advice of the day:</h2>
-        {advice && <p>{advice}</p>}
       </div>
     </div>
   );
