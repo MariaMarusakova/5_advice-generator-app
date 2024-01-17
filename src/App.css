@@ -9,19 +9,73 @@
   }
 }
 
-.main-container{
-  background-color: #282c34;
+:root {
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: hsl(150, 100%, 66%);
+
+  --Grayish-Blue: hsl(217, 19%, 38%);
+  --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+  --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+* {
+  font-family: 'Overpass', serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Dark-Blue);
+
+}
+
+.main-container {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
 .advice-container {
-  color: #61dafb;
+  font-size: x-large;
+  color: white;
+  background-color: var(--Dark-Grayish-Blue);
+  width: 500px;
+  height: 350px;
+  border-radius: 15px 15px 15px 15px;
+  margin: auto;
+
 }
 
+h2 {
+  padding-top: 3rem;
+  color: var(--Neon-Green);
+  text-transform: uppercase;
+  font-size: small;
+}
 
+.advice {
+  padding: 10%;
+  height: 60%;
+  display: grid;
+	align-items: center;
+}
+
+.divider {
+
+  padding-bottom: 3%;
+
+}
+
+button {
+
+  padding: 15px 15px 12px 15px;
+  border-radius: 50%;
+  background-color: var(--Neon-Green);
+  border-style: none;
+
+}
+
+button:hover {
+  box-shadow: 0 5px 40px hsla(150, 100%, 66%, 0.9);
+}
