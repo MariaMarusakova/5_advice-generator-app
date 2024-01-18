@@ -4,6 +4,7 @@ import { ReactComponent as Divider } from './images/pattern-divider-desktop.svg'
 import './App.css';
 import React, { useState, useEffect } from "react";
 
+
 function App() {
 
   const [advice, setAdvice] = useState(null);
@@ -11,7 +12,7 @@ function App() {
   const fetchAdvice = async () => {
     try {
 
-      const response = await fetch('https://api.adviceslip.com/advice');
+      const response = await fetch('https://api.adviceslip.com/advice?t=' + Math.random());
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -27,22 +28,21 @@ function App() {
 
   useEffect(() => {
     fetchAdvice();
+
   }, []);
 
   return (
-    <body>
-      <div className="main-container">
-        <div className="advice-container">
-          {advice && <h2>Advice #{advice.id}</h2>}
-          {advice && <div className='advice'>"{advice.advice}"</div>}
-          <div className='bottom-part'>
-            <div className='divider'><Divider /></div>
-            <button><Dice /></button>
-          </div>
-
+    <div className="main-container">
+      <div className="advice-container">
+        {advice && <h2>Advice #{advice.id}</h2>}
+        {advice && <div className='advice'>"{advice.advice}"</div>}
+        <div className='bottom-part'>
+          <div className='divider'><Divider /></div>
+          <button onClick={fetchAdvice}><Dice /></button>
         </div>
+
       </div>
-    </body>
+    </div>
   );
 }
 
