@@ -34,8 +34,8 @@ function App() {
   }, []);
 
   const getDivider = (innerWidth) => {
-    if (innerWidth <= 375) return <MobileDivider />
-    return <DesktopDivider />
+    if (innerWidth <= 375) return <MobileDivider title='Divider Icon'/>
+    return <DesktopDivider title='Divider Icon'/>
     
   }
 
@@ -46,7 +46,7 @@ function App() {
         {advice && <div className='advice'>"{advice.advice}"</div>}
         <div className='bottom-part'>
           <div className='divider'>{getDivider(window.innerWidth)}</div>
-          <button onClick={fetchAdvice}><Dice /></button>
+          <button onClick={fetchAdvice}><Dice title='Dice Icon'/></button>
         </div>
 
       </div>
