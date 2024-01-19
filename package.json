@@ -1,5 +1,6 @@
 {
   "name": "5_advice-generator-app",
+  "homepage": "https://mariamarusakova.github.io/5_advice-generator-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
