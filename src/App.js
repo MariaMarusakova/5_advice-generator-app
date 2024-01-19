@@ -1,5 +1,7 @@
 import { ReactComponent as Dice } from './images/icon-dice.svg';
-import { ReactComponent as Divider } from './images/pattern-divider-desktop.svg';
+import { ReactComponent as DesktopDivider } from './images/pattern-divider-desktop.svg';
+import { ReactComponent as MobileDivider } from './images/pattern-divider-mobile.svg';
+
 
 import './App.css';
 import React, { useState, useEffect } from "react";
@@ -31,13 +33,19 @@ function App() {
 
   }, []);
 
+  const getDivider = (innerWidth) => {
+    if (innerWidth <= 375) return <MobileDivider />
+    return <DesktopDivider />
+    
+  }
+
   return (
     <div className="main-container">
       <div className="advice-container">
         {advice && <h2>Advice #{advice.id}</h2>}
         {advice && <div className='advice'>"{advice.advice}"</div>}
         <div className='bottom-part'>
-          <div className='divider'><Divider /></div>
+          <div className='divider'>{getDivider(window.innerWidth)}</div>
           <button onClick={fetchAdvice}><Dice /></button>
         </div>
 
