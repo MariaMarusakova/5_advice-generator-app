@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+/* styles for desktop devices */
+@media only screen and (min-width: 1440px) {
+  .advice-container {
+    width: 500px;
+    height: 350px;
+  }
+
+}
+
+/* styles for mobile devices */
+@media only screen and (max-width: 375px) {
+  .advice-container {
+
+    width: 300px;
+    height: 350px;
+
+
+  }
+
+
+}
+
+:root {
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: hsl(150, 100%, 66%);
+
+  --Grayish-Blue: hsl(217, 19%, 38%);
+  --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+  --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+* {
+  font-family: 'Manrope', serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  background-color: var(--Dark-Blue);
+
+}
+
+.advice-container {
+  font-size: x-large;
+  color: white;
+  background-color: var(--Dark-Grayish-Blue);
+
+  border-radius: 15px 15px 15px 15px;
+  margin: auto;
+
+
+}
+
+h2 {
+  padding-top: 3rem;
+  color: var(--Neon-Green);
+  text-transform: uppercase;
+  font-size: small;
+  letter-spacing: 0.5em;
+  font-weight: 800;
+
+}
+
+.advice {
+  padding: 10%;
+  height: 60%;
+  display: inline-block;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 800;
+  overflow: scroll;
+}
+
+.divider {
+
+  margin-bottom: 3%;
+
+}
+
+button {
+
+  padding: 15px 15px 12px 15px;
+  border-radius: 50%;
+  background-color: var(--Neon-Green);
+  border-style: none;
+
+}
+
+button:hover {
+  box-shadow: 0 5px 40px hsla(150, 100%, 66%, 0.9);
+}
